@@ -98,6 +98,10 @@ public class JPARecordLocatorStrategy<K, T> implements RecordLocatorStrategy<T> 
 
     private List<T> findByIndex(int firstRowIdx, int lastRowIdx) {
         int pageSize = lastRowIdx - firstRowIdx;
+
+        // Just works
+        if (pageSize == 0) pageSize = 1;
+
         @SuppressWarnings("unchecked")
         List<T> returnMe = query(null, true).setFirstResult(firstRowIdx).setMaxResults(pageSize).getResultList();
         return returnMe;
