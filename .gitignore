@@ -15,3 +15,5 @@ logs
 tmp
 lib
 conf/application.conf
+.idea
+*.iml
